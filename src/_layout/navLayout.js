@@ -6,7 +6,7 @@ const NavLayout = ({ children }) => {
         <>
             <NaviWrap>
                 <h1>
-                    <button><a href="/">Logo</a></button>
+                    <button><a href="/">TheMovies</a></button>
                 </h1>
                 <div>
                     <NaviButton><a href="/">Home</a></NaviButton>

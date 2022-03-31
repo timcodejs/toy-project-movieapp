@@ -1,14 +1,17 @@
+
 // state 기본 값 
 const initialState = [
     {
         id: 1,
         title: "어바웃 타임",
-        poster: "/images/abouttime.jpg"
+        poster: "/images/abouttime.jpg",
+        background: "/images/background_image1.jpg"
     },
     {
         id: 2,
         title: "다크나이트",
-        poster: "/images/darknight.jpg"
+        poster: "/images/darknight.jpg",
+        background: "/images/background_image1.jpg"
     }
 ];
 
@@ -25,7 +28,8 @@ const movie = (state = initialState, action) => {
                 { 
                     id: action.data.id, 
                     title: action.data.title, 
-                    poster: action.data.poster 
+                    poster: action.data.poster,
+                    background: action.data.background
                 }
             );
         default:
