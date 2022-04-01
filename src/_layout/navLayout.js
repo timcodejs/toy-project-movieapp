@@ -5,12 +5,14 @@ const NavLayout = ({ children }) => {
     return(
         <>
             <NaviWrap>
-                <h1>
-                    <button><a href="/">TheMovies</a></button>
-                </h1>
                 <div>
-                    <NaviButton><a href="/">Home</a></NaviButton>
-                    <NaviButton><a href="/movies">Movies</a></NaviButton>
+                    <h1>
+                        <button><a href="/">TheMovies</a></button>
+                    </h1>
+                    <div>
+                        <button><a href="/">Home</a></button>
+                        <button><a href="/movies">Movies</a></button>
+                    </div>
                 </div>
             </NaviWrap>
             <div>{children}</div>
@@ -21,20 +23,26 @@ const NavLayout = ({ children }) => {
 export default NavLayout;
 
 const NaviWrap = styled.div`
+    position: relative;
+    z-index: 100;
+    max-width: 80rem;
+    min-width: 18.75rem;
+    width: 80%;
     height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10%;
-    h1 a {
+    margin: 0 auto;
+    & > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10%;
+    }
+    & h1 a {
         font-size: 20px;
         font-weight: bold;
     }
-    
-`;
-
-const NaviButton = styled.button`
-    font-size: 20px;
-    font-weight: bold;
-    padding: 8px 16px;
+    & button {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 8px 16px;
+    }
 `;

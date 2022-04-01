@@ -1,39 +1,35 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const HomeMain = () => {
     const movieState = useSelector((state) => state.movie);
 
     return(
-        <HomeMoviesWrap>
-            <h1>HomeMain</h1>
+        <Slider {...settings}>
             {movieState.map((item, index) => (
                 <div key={index}>
                     <div>
-                        <p><img src={item.poster} alt="영화 포스터" /></p>
-                        <p>{item.title}</p>
+                        <img src={item.poster} alt="영화 포스터" /> 
+                        <span>{item.title}</span>
                     </div>
                 </div>
             ))}
-        </HomeMoviesWrap>
+        </Slider>
     )
 }
 
 export default HomeMain;
 
-const HomeMoviesWrap = styled.div`
-    padding: 0 10%;
-    text-align: center;
-    img {
-        width: 200px;
-        height: 300px;
-    }
-
-    & > div {
-        display: inline-block;
-        margin: 15px;
-        font-size: 16px;
-        font-weight: 600;
-    }
-`;
+const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '0px'
+};
